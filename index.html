@@ -6,15 +6,47 @@
 
 A journal of my discoveries, enlightenments, and occasional frustrations as a long-time geek.
 
+2020-04-24: Debugging Docker containers
+==============================================================
+
+Trying to learn Kubernetes and Docker without a purpose is not terribly motivating.  My weightlifing application is getting to be mature, and with the current confinement, I've been asked to consider running virtual competitions.  This has in turn sparked my interest: how would I refactor the application to be less of a traditional monolith, and run in separate containers, says one per gym, and yet all could talk to each other using something like Hazelcast or RabbitMQ,
+
+But first things first.  Many things are assumed to be obvious.  
+
+### How to inspect a container that won't start
+
+1. Make sure there is a shell inside the image used as a base.  This is the case for common non-optimized java images, such as `adoptopenjdk/openjdk8:latest`
+
+2. When starting a uberjar, the entrypoint is the java command.  If (as I did) you are not providing the correct jar, and the jar immediately crashes how to you get in to look?
+
+3. The answer is to provide an alternate entry point, and to request and interactive access, like so:
+
+   ```bash
+   docker run -it --entrypoint="/bin/bash" myimage:latest
+   ```
+
+   
+
+2020-02-23: Gitpod
+==============================================================
+
+I have been programming in Java since 1997, initially using JBuilder (as I recall). I have been working with Eclipse since the early 2000s, especially in the context of my Teximus software startup.  There, we used Ant extensively to automate our build chain. 
+
+When I started work on [OWLCMS](https://owlcms.github.io/owlcms4/#/index) in 2009, I learned Maven.  But creating an environment with SVN, then Mercury, then GIT, Maven, and a bunch of utilities was a real mess.
+
+Fast-forward to 2019.  Git has won the war, and most OSS projects are on Github.  But setting up an Eclipse with all the stuff needed for Git and Maven to work correctly is still a daunting affair.  Something like a good day's work. Enter [Gitpod](https://www.gitpod.io).  It provides a Docker container that runs a Web-based version of Eclipse called Theia with all the Java goodies available, plus Maven and Git integration.  Theia is actually a cousin of Visual Studio Code -- visually they are strikingly similar, and Theia runs all the VSCode extensions.  I can't actually differentiate VSCode (which I use locally for Go programming) and Theia on Gitpod.
+
+The nice thing: I now have a cloud-based version of my development environment in a matter of minutes.  See [this walkthrough](https://jflamy-dev.github.io/owlcms4-prerelease/#/Gitpod) for an example.
+
+
 
 2020-02-20: Adventures in Computing Redux
 ==============================================================
 
-I used to hold a public journal where all my quirky discoveries about programming, software configuration and other propeller-head fun 
-would be logged.
+I used to hold a public journal where all my quirky discoveries about programming, software configuration and other propeller-head fun would be logged.
 This is an attempt at relaunching this in the modern age.
 
 
- 
+
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
