@@ -6,6 +6,24 @@
 
 A journal of my discoveries, enlightenments, and occasional frustrations as a long-time geek.
 
+# 2023-12-30: Vaadin for the win
+
+I first started using Vaadin in 2009. It was still called IT Mill and was just switching to using Vaadin as its brand name.   At the time, I was lead architect on a project that was building a very large application using Java technologies. I felt I was falling behind on technology, so I decided to build a personal application with all the current technologies as a learning experience.  
+
+The project I chose was a competition management application for olympic weightlifting.  At the time my two daughters and myself were involved as athletes and referees. I had previously cobbled up an Excel-based solution (two Excels working together on the same data through some fairly sketch locking, one for editing, the other for displaying to the public).  So now I wanted to rebuild-it as a professional-grade application.
+
+The program would be called owlcms (Olympic Weightlifting Competition Management System) In the first version, there was no refereeing, only data capture and display, plus timekeeping.  I decided to use Vaadin because I could do all of the work in Java and JSP.  I had been very frustrated with JavaScript frameworks a couple years before, and wanted to avoid them.
+
+Vaadin quickly came up with its version 8, which featured an interesting concept, "server push". Implemented using Atmosphere, this allowed changes to a web page to be sent to a browser.  So using Java and only Java, I could remove/add/change the HTML of a page and the browser would update magically.  A server push would tell the browser to reload the JSP (which was the more convenient way to do the scoreboards).  I was also able to implement refereeing with simple JavaScript running in the browser, that would send information to the server.
+
+There was a an attempt in 2015 to redo the database using a nosql approach, but that turned out to be a dead-end. Too much work for too little benefit for the end users.
+
+In 2019, there had been very significant evolution in technology, and the program started to feel dated.  I wanted to be able to run in the cloud, and run on tablets.  Running in the cloud brought one very important constraint: it was not feasible to send the decisions to the server that would emit sound, and it was not feasible to update the timers by pushing from the server.  These things had to be done locally.  Vaadin had started supporting a standard called WebComponents that allowed a clean way to do these things, so I embarked on a re-architecture.
+
+Fast-forward to 2023.  Vaadin is now at release 24, and now has mature support for Web Components.  It is also evolving towards a hybrid TypeScript/Java model -- the reality being that most expertise for building web applications now resides with JavaScript/TypeScript programmers.  But owlcms is still very well served by Vaadin, in particular because it is easily packaged to run on Windows, Mac, Linux, and Docker containers.
+
+
+
 2020-04-24: Debugging Docker containers
 ==============================================================
 
