@@ -1,79 +1,48 @@
-<meta charset="utf-8" emacsmode="-*- markdown -*-"> <link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css?">
-
-
-                        **Adventures in Computing**
-                           Version 2.0
-
-
-A journal of my discoveries, enlightenments, and occasional frustrations as a long-time geek.
-
-# 2024-08-02: jflamy.dev relaunch
-
-I retired from consulting a year ago, at the end of June 2023.  I had been a senior IT manager and a lead IT architect, you can read all about that on my LinkedIn page -- that is pretty much the only reason I still have one.  Since then, my brain has been kept quite busy with owlcms (https://owlcms.jflamy.dev).
-
-This site is an absolutely trivial journal, done using Markdeep.
-
-I will try to contribute to it occasionally.
-
-# 2023-12-30: Vaadin for the win
-
-I first started using Vaadin in 2009. It was still called IT Mill and was just switching to using Vaadin as its brand name.   At the time, I was lead architect on a project that was building a very large application using Java technologies. I felt I was falling behind on technology, so I decided to build a personal application with all the current technologies as a learning experience.  
-
-The project I chose was a competition management application for olympic weightlifting.  At the time my two daughters and myself were involved as athletes and referees. I had previously cobbled up an Excel-based solution (two Excels working together on the same data through some fairly sketch locking, one for editing, the other for displaying to the public).  So now I wanted to rebuild-it as a professional-grade application.
-
-The program would be called owlcms (Olympic Weightlifting Competition Management System) In the first version, there was no refereeing, only data capture and display, plus timekeeping.  I decided to use Vaadin because I could do all of the work in Java and JSP.  I had been very frustrated with JavaScript frameworks a couple years before, and wanted to avoid them.
-
-Vaadin quickly came up with its version 8, which featured an interesting concept, "server push". Implemented using Atmosphere, this allowed changes to a web page to be sent to a browser.  So using Java and only Java, I could remove/add/change the HTML of a page and the browser would update magically.  A server push would tell the browser to reload the JSP (which was the more convenient way to do the scoreboards).  I was also able to implement refereeing with simple JavaScript running in the browser, that would send information to the server.
-
-There was a an attempt in 2015 to redo the database using a nosql approach, but that turned out to be a dead-end. Too much work for too little benefit for the end users.
-
-In 2019, there had been very significant evolution in technology, and the program started to feel dated.  I wanted to be able to run in the cloud, and run on tablets.  Running in the cloud brought one very important constraint: it was not feasible to send the decisions to the server that would emit sound, and it was not feasible to update the timers by pushing from the server.  These things had to be done locally.  Vaadin had started supporting a standard called WebComponents that allowed a clean way to do these things, so I embarked on a re-architecture.
-
-Fast-forward to 2023.  Vaadin is now at release 24, and now has mature support for Web Components.  It is also evolving towards a hybrid TypeScript/Java model -- the reality being that most expertise for building web applications now resides with JavaScript/TypeScript programmers.  But owlcms is still very well served by Vaadin, in particular because it is easily packaged to run on Windows, Mac, Linux, and Docker containers.
-
-
-
-2020-04-24: Debugging Docker containers
-==============================================================
-
-Trying to learn Kubernetes and Docker without a purpose is not terribly motivating.  My weightlifing application is getting to be mature, and with the current confinement, I've been asked to consider running virtual competitions.  This has in turn sparked my interest: how would I refactor the application to be less of a traditional monolith, and run in separate containers, says one per gym, and yet all could talk to each other using something like Hazelcast or RabbitMQ,
-
-But first things first.  Many things are assumed to be obvious.  
-
-### How to inspect a container that won't start
-
-1. Make sure there is a shell inside the image used as a base.  This is the case for common non-optimized java images, such as `adoptopenjdk/openjdk8:latest`
-
-2. When starting a uberjar, the entrypoint is the java command.  If (as I did) you are not providing the correct jar, and the jar immediately crashes how to you get in to look?
-
-3. The answer is to provide an alternate entry point, and to request and interactive access, like so:
-
-   ```bash
-   docker run -it --entrypoint="/bin/bash" myimage:latest
-   ```
-
-   
-
-2020-02-23: Gitpod
-==============================================================
-
-I have been programming in Java since 1997, initially using JBuilder (as I recall). I have been working with Eclipse since the early 2000s, especially in the context of my Teximus software startup.  There, we used Ant extensively to automate our build chain. 
-
-When I started work on [OWLCMS](https://owlcms.github.io/owlcms4/#/index) in 2009, I learned Maven.  But creating an environment with SVN, then Mercury, then GIT, Maven, and a bunch of utilities was a real mess.
-
-Fast-forward to 2019.  Git has won the war, and most OSS projects are on Github.  But setting up an Eclipse with all the stuff needed for Git and Maven to work correctly is still a daunting affair.  Something like a good day's work. Enter [Gitpod](https://www.gitpod.io).  It provides a Docker container that runs a Web-based version of Eclipse called Theia with all the Java goodies available, plus Maven and Git integration.  Theia is actually a cousin of Visual Studio Code -- visually they are strikingly similar, and Theia runs all the VSCode extensions.  I can't actually differentiate VSCode (which I use locally for Go programming) and Theia on Gitpod.
-
-The nice thing: I now have a cloud-based version of my development environment in a matter of minutes.  See [this walkthrough](https://jflamy-dev.github.io/owlcms4-prerelease/#/Gitpod) for an example.
-
-
-
-2020-02-20: Adventures in Computing Redux
-==============================================================
-
-I used to hold a public journal where all my quirky discoveries about programming, software configuration and other propeller-head fun would be logged.
-This is an attempt at relaunching this in the modern age.
-
-
-
-<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
-<!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adventures in Computing</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="A journal of my discoveries, enlightenments, and occasional frustrations as a long-time geek.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Adventures in Computing',
+      repo: 'https://github.com/jflamy/jflamy.github.io',
+      loadSidebar: true,
+      auto2top: true,
+      maxLevel: 4,
+      subMaxLevel: 2,
+      search: 'auto',
+      copyCode: {
+        buttonText: 'Copy to clipboard',
+        errorText: 'Error',
+        successText: 'Copied'
+      },
+      pagination: {
+        previousText: 'Previous',
+        nextText: 'Next',
+        crossChapter: true,
+        crossChapterText: true,
+      }
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- Search plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- Copy code plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <!-- Pagination plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+  <!-- Prism language highlighting -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+</body>
+</html>
