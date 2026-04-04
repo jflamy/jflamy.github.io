@@ -1,6 +1,7 @@
 - [Home](/)
 
 - **Posts**
+  - [OWLCMS Videos and Replays (2026-04-04)](posts/2026-04-04-video/2026-04-04-video.md)
   - [Using AI Assistance in Coding, follow-up (2026-01-16)](posts/2026-01-16-not-going-back.md)
   - [Using AI Assistance in Coding (2025-10-03)](posts/2025-10-03-ai-coding.md)
   - [OWLCMS News (2025-10-03)](posts/2025-10-03-owlcms-news.md)
@@ -9,7 +10,7 @@
   - [Debugging Docker containers (2020-04-24)](posts/2020-04-24-docker.md)
   - [Gitpod (2020-02-23)](posts/2020-02-23-gitpod.md)
   - [Adventures in Computing Redux (2020-02-20)](posts/2020-02-20-redux.md)
-
+  
 - **Links**
   - [GitHub](https://github.com/jflamy)
   - [OWLCMS Project](https://owlcms.jflamy.dev)
