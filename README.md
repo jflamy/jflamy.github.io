@@ -2,7 +2,7 @@
 
 > A journal of my discoveries, enlightenments, and occasional frustrations as a long-time geek.
 
-Welcome to my technical blog! This is where I document my journey through various technologies, discoveries, and experiences in the world of computing.
+Welcome to my technical blog! This is where I document my journey,  discoveries, and experiences using various computing technologies.
 
 ## Recent Posts
 
