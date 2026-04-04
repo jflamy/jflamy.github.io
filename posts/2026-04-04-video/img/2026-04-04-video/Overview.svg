@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 75 1200 1005">
+  <rect x="0" y="75" width="1200" height="1005" fill="white"/>
+
+  <defs>
+    <style>
+      .device-box { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; }
+      .switch-box { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; }
+      .master-box { fill: #f3e5f5; stroke: #7b1fa2; stroke-width: 2; }
+      .display-box { fill: #e8f5e9; stroke: #388e3c; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; }
+      .label { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+      .title-text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .connection { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead-physical); }
+      .mqtt-arrow { stroke: #7b1fa2; stroke-width: 2; fill: none; marker-end: url(#arrowhead-mqtt); }
+      .video-connection { stroke: #1976d2; stroke-width: 2; fill: none; }
+      .video-arrow { stroke: #1976d2; stroke-width: 2; fill: none; marker-end: url(#arrowhead-video); }
+      .youtube-arrow { stroke: #c62828; stroke-width: 2; fill: none; marker-end: url(#arrowhead-youtube); }
+      .http-arrow { stroke: #000; stroke-width: 2; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead-http); }
+      .api-arrow { stroke: #1976d2; stroke-width: 2; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead-api); }
+    </style>
+    <marker id="arrowhead-mqtt" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7b1fa2" />
+    </marker>
+    <marker id="arrowhead-physical" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+    <marker id="arrowhead-video" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1976d2" />
+    </marker>
+    <marker id="arrowhead-youtube" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#c62828" />
+    </marker>
+    <marker id="arrowhead-http" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#000" />
+    </marker>
+    <marker id="arrowhead-api" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1976d2" />
+    </marker>
+  </defs>
+
+  <text x="600" y="110" class="title-text">OWLCMS Video Setup</text>
+
+  <path d="M 778 165 Q 768 160, 778 155 Q 788 150, 803 150 Q 813 145, 828 145 Q 843 145, 853 150 Q 868 150, 878 155 Q 888 160, 878 165 Q 888 170, 878 175 Q 868 180, 853 180 Q 843 185, 828 185 Q 813 185, 803 180 Q 788 180, 778 175 Q 768 170, 778 165 Z" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="828" y="173" class="title-text">Internet</text>
+
+  <rect x="335" y="245" width="530" height="110" fill="none" stroke="#7b1fa2" stroke-width="1" rx="5"/>
+
+  <rect x="340" y="250" width="200" height="100" class="master-box" rx="5"/>
+  <text x="440" y="285" class="title-text">OWLCMS</text>
+  <text x="355" y="305" class="label">On-Venue Results System</text>
+  <text x="355" y="325" class="label">MQTT Broker</text>
+
+  <rect x="690" y="250" width="170" height="100" class="master-box" rx="5"/>
+  <text x="765" y="285" class="title-text">Tracker</text>
+  <text x="705" y="305" class="label">• OBS Remote Control</text>
+  <text x="705" y="325" class="label">• Remote Scoreboards</text>
+
+  <rect x="160" y="420" width="860" height="210" fill="none" stroke="#1976d2" stroke-width="3" stroke-dasharray="10,5" rx="10"/>
+  <text x="590" y="437" class="title-text" fill="#1976d2">Video Traffic Switch</text>
+
+  <rect x="490" y="450" width="200" height="170" class="device-box" rx="5"/>
+  <text x="590" y="482" class="title-text">Replay System</text>
+  <text x="505" y="502" class="label">Dell XPS13 9343</text>
+  <text x="505" y="522" class="label">• Camera capture / ingest</text>
+  <text x="505" y="542" class="label">• Distribution + recording</text>
+  <text x="505" y="562" class="label">• MQTT Subscriber</text>
+
+  <rect x="190" y="450" width="200" height="170" class="device-box" rx="5"/>
+  <text x="290" y="480" class="title-text">LED Wall OBS</text>
+  <text x="205" y="500" class="label">Dell 2017 GTX 1050 NVENC</text>
+  <text x="205" y="520" class="label">• Full HD HDMI Output</text>
+  <text x="205" y="540" class="label">• Inputs: Replay MP4s</text>
+  <text x="205" y="560" class="label">• Inputs: Scoreboards</text>
+  <text x="205" y="580" class="label">• Inputs: Local video file</text>
+
+  <rect x="790" y="450" width="200" height="160" class="device-box" rx="5"/>
+  <text x="890" y="485" class="title-text">Streaming OBS</text>
+  <text x="805" y="505" class="label">Dell 2017 GTX 1050 NVENC</text>
+  <text x="805" y="525" class="label">YouTube Stream</text>
+  <text x="805" y="545" class="label">Inputs: UDP 9001, 9002</text>
+
+  <rect x="415" y="670" width="150" height="80" class="display-box" rx="5"/>
+  <text x="490" y="695" class="title-text">Center Camera</text>
+  <text x="430" y="715" class="label">(Camera 1)</text>
+  <text x="430" y="735" class="label">UVC PTZ USB</text>
+
+  <rect x="615" y="670" width="150" height="80" class="display-box" rx="5"/>
+  <text x="690" y="695" class="title-text">Side Camera</text>
+  <text x="630" y="715" class="label">(Camera 2)</text>
+  <text x="630" y="735" class="label">UVC PTZ USB</text>
+
+  <rect x="415" y="780" width="150" height="60" class="display-box" rx="5"/>
+  <text x="490" y="805" class="title-text">HDMI Splitter</text>
+  <text x="430" y="825" class="label">1 in → 2 out</text>
+
+  <rect x="350" y="870" width="120" height="80" class="display-box" rx="5"/>
+  <text x="410" y="895" class="title-text">Marshal TV</text>
+  <text x="365" y="915" class="label">Live Video</text>
+
+  <rect x="510" y="870" width="120" height="80" class="display-box" rx="5"/>
+  <text x="570" y="895" class="title-text">Warmup TV</text>
+  <text x="525" y="915" class="label">Live Video</text>
+
+  <rect x="190" y="145" width="200" height="40" class="display-box" rx="5"/>
+  <text x="290" y="172" class="title-text">LED Wall</text>
+
+  <path d="M 890 450 L 890 180" class="youtube-arrow"/>
+  <text x="900" y="315" class="label" fill="#c62828">YouTube</text>
+
+  <path d="M 440 350 Q 500 400 590 450" class="mqtt-arrow" stroke-dasharray="5,5"/>
+  <text x="495" y="390" class="label" style="fill: #7b1fa2">MQTT</text>
+
+  <line x1="490" y1="670" x2="560" y2="620" class="connection" marker-end="none"/>
+  <text x="445" y="660" class="label">USB 3.0</text>
+
+  <line x1="690" y1="670" x2="620" y2="620" class="connection" marker-end="none"/>
+  <text x="685" y="660" class="label">USB 3.0</text>
+
+  <line x1="490" y1="750" x2="490" y2="780" class="connection"/>
+  <text x="505" y="770" class="label">Fiber Optic HDMI Cable</text>
+
+  <line x1="455" y1="840" x2="410" y2="870" class="connection"/>
+  <text x="448" y="857" class="label">HDMI</text>
+
+  <line x1="525" y1="840" x2="570" y2="870" class="connection"/>
+  <text x="553" y="857" class="label">HDMI</text>
+
+  <line x1="290" y1="450" x2="290" y2="185" class="connection"/>
+  <text x="195" y="200" class="label">HDMI 1920x1080</text>
+
+  <path d="M 490 530 L 390 530" class="video-arrow"/>
+  <path d="M 690 530 L 790 530" class="video-arrow"/>
+  <text x="440" y="518" class="label" style="text-anchor: middle;" fill="#1976d2">H.264 Multicast</text>
+  <text x="740" y="518" class="label" style="text-anchor: middle;" fill="#1976d2">H.264 Multicast</text>
+
+  <path d="M 490 490 Q 440 490 390 490" class="http-arrow"/>
+  <text x="410" y="480" class="label">MP4 Replays</text>
+
+  <path d="M 690 490 Q 740 490 790 490" class="http-arrow"/>
+  <text x="710" y="480" class="label">MP4 Replays</text>
+
+  <path d="M 440 350 Q 365 400 290 450" class="http-arrow"/>
+  <text x="335" y="375" class="label">Scoreboards</text>
+
+  <path d="M 440 350 Q 665 400 890 450" class="http-arrow"/>
+  <text x="520" y="375" class="label">Scoreboards</text>
+
+  <line x1="540" y1="300" x2="690" y2="300" class="mqtt-arrow" stroke-dasharray="5,5"/>
+  <text x="615" y="290" class="label" fill="#7b1fa2">WebSocket</text>
+
+  <path d="M 765 250 L 765 180" class="http-arrow"/>
+  <text x="775" y="215" class="label">Cloud Scoreboards</text>
+
+  <path d="M 765 350 L 890 450" class="api-arrow"/>
+  <text x="805" y="375" class="label" style="fill: #1976d2">API OBS</text>
+
+  <path d="M 765 350 L 340 450" class="api-arrow"/>
+  <text x="695" y="375" class="label" style="fill: #1976d2">API OBS</text>
+
+  <rect x="50" y="990" width="1100" height="80" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5"/>
+  <text x="600" y="1015" class="title-text">Data Flow Legend</text>
+
+  <text x="80" y="1040" class="label">Physical</text>
+  <line x1="80" y1="1050" x2="180" y2="1050" class="connection"/>
+
+  <text x="250" y="1040" class="label">UDP Video</text>
+  <line x1="250" y1="1050" x2="350" y2="1050" class="video-arrow"/>
+
+  <text x="430" y="1040" class="label">API OWLCMS</text>
+  <path d="M 430 1050 L 530 1050" class="mqtt-arrow" stroke-dasharray="5,5"/>
+
+  <text x="610" y="1040" class="label">YouTube</text>
+  <path d="M 610 1050 L 710 1050" class="youtube-arrow"/>
+
+  <text x="790" y="1040" class="label">API OBS</text>
+  <line x1="790" y1="1050" x2="890" y2="1050" class="api-arrow"/>
+
+  <text x="970" y="1040" class="label">HTTP</text>
+  <path d="M 970 1050 L 1070 1050" class="http-arrow"/>
+</svg>
