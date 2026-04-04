@@ -6,6 +6,7 @@ Welcome to my technical blog! This is where I document my journey through variou
 
 ## Recent Posts
 
+- [OWLCMS Videos and Replays (2026-04-04)](posts/2026-04-04-video/2026-04-04-video.md)
 - [Using AI Assistance in Coding, follow-up (2026-01-16)](posts/2026-01-16-not-going-back.md)
 - [Using AI Assistance in Coding (2025-10-03)](posts/2025-10-03-ai-coding.md)
 - [OWLCMS News (2025-10-03)](posts/2025-10-03-owlcms-news.md)
